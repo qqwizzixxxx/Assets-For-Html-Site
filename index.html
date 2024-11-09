@@ -23,7 +23,7 @@
             overflow: hidden;
         }
 
-        video {
+        video.background {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -84,44 +84,44 @@
             transform: scale(1.05);
         }
 
-        #youtubePlayer {
+        #videoPlayer {
             margin-top: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             display: none; /* Initially hidden */
         }
 
-        iframe {
+        video.player {
             border-radius: 10px;
+            width: 640px; /* Set width for the video player */
+            height: 360px; /* Set height for the video player */
         }
     </style>
 </head>
 <body>
-    <video autoplay loop muted>
-        <source src="https://github.com/qqwizzixxxx/Assets-For-Html-Site/raw/refs/heads/main/bg.mp4" type="video/mp4"> <!-- Replace with your video link -->
+    <video class="background" autoplay loop muted>
+        <source src="https://github.com/qqwizzixxxx/Assets-For-Html-Site/raw/refs/heads/main/bg.mp4" type="video/mp4"> <!-- Replace with your background video link -->
         Your browser does not support the video tag.
     </video>
     
     <div class="background-text">Silly Cats!</div>
     <div class="container">
         <h1>You Got A Silly Cat Video</h1>
-        <div id="youtubePlayer">
-            <iframe id="player" type="text/html" width="640" height="360"
-                src="https://www.youtube.com/embed/0eJj0dITU0A?enablejsapi=1"
-                frameborder="0" allowfullscreen></iframe>
+        <div id="videoPlayer">
+            <video class="player" controls>
+                <source src="https://github.com/qqwizzixxxx/Assets-For-Html-Site/raw/refs/heads/main/miau.mp4" type="video/mp4"> <!-- Replace with your video link -->
+                Your browser does not support the video tag.
+            </video>
         </div>
         <button id="playButton">Play Video</button>
     </div>
 
     <script>
         const playButton = document.getElementById('playButton');
-        const youtubePlayer = document.getElementById('youtubePlayer');
-        const player = document.getElementById('player');
+        const videoPlayer = document.getElementById('videoPlayer');
 
-        playButton .addEventListener('click', () => {
-            youtubePlayer.style.display = 'block'; // Show the YouTube player
-            const videoId = '0eJj0dITU0A'; // Updated YouTube video ID
-            player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1`;
+        playButton.addEventListener('click', () => {
+            videoPlayer.style.display = 'block'; // Show the video player
             playButton.style.display = 'none'; // Hide the button after clicking
         });
     </script>
