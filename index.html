@@ -108,8 +108,8 @@
     <div class="container">
         <h1>You Got A Silly Cat Video</h1>
         <div id="videoPlayer">
-            <video class="player" controls>
-                <source src="https://github.com/qqwizzixxxx/Assets-For-Html-Site/raw/refs/heads/main/miau.mp4" type="video/mp4"> <!-- Replace with your video link -->
+            <video class="player" controls autoplay>
+                <source src="https://github.com/qqwizzixxxx/Assets-For-Html-Site/raw/refs/heads/main/miau.mp4" type ="video/mp4"> <!-- Replace with your video link -->
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -119,9 +119,11 @@
     <script>
         const playButton = document.getElementById('playButton');
         const videoPlayer = document.getElementById('videoPlayer');
+        const videoElement = document.querySelector('.player');
 
         playButton.addEventListener('click', () => {
             videoPlayer.style.display = 'block'; // Show the video player
+            videoElement.play(); // Start playing the video
             playButton.style.display = 'none'; // Hide the button after clicking
         });
     </script>
